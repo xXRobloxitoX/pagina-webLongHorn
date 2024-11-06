@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Longhorn Grill and Drinks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Longhorn Grill and Drinks" name="keywords">
+    <meta content="Longhorn Grill and Drinks" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Estilos para la pantalla de carga con el video */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background-color: black; /* Fondo negro */
+        }
+
+        /* Estilo para el video */
+        #loading-video {
+            width: 100vw; /* Ocupar todo el ancho de la ventana */
+            height: 100vh; /* Ocupar toda la altura de la ventana */
+            position: absolute; /* Asegura que ocupe toda la pantalla sin bordes */
+            top: 0; /* Para que comience en la parte superior */
+            left: 0; /* Para que comience en la parte izquierda */
+            pointer-events: none; /* Evita interacciones del mouse */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pantalla de carga con el video -->
+    <div id="loading-screen">
+        <iframe id="loading-video" src="https://www.youtube.com/embed/W-8h6yhnfLw?autoplay=1&controls=0&showinfo=0&rel=0&mute=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <!-- Contenido principal de la página (oculto inicialmente) -->
+    <div class="wrapper" style="display: none;">
+        <!-- Aquí va el contenido de la página principal -->
+    </div>
+
+    <script>
+        // Cargar el API de YouTube
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Función que se llama cuando la API de YouTube está lista
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('loading-video', {
+                events: {
+                    'onReady': function(event) {
+                        event.target.playVideo(); // Reproducción automática
+                    },
+                    'onStateChange': function(event) {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            document.getElementById("loading-screen").style.display = "none";
+                            document.querySelector(".wrapper").style.display = "block"; // Muestra el contenido de la página
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+            <!-- Top Bar Start -->
+            <div class="top-bar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="logo" style="text-align: center;">
+                                <a href="index.html" style="display: block;">
+                                    <img src="https://i.ibb.co/3BmZjGR/gwagfh.png" alt="Logo de Longhorn Grill and Drinks" style="width: 60px; height: auto; margin-bottom: 5px;">
+                                    <h1 style="font-size: 20px;">LongHorn Grill & Drinks</h1>
+                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="top-bar-right">
+                                <div class="text">
+                                    <h2>Horario </h2>
+                                    <p>12:30am - 9:30pm JUEVES a DOMINGO</p>
+                                </div>
+                                <div class="text">
+                                    <h2>Llamenos</h2>
+                                    <p>+51 945 186 438</p>
+                                </div>
+                                <div class="social">
+                                    <!DOCTYPE html>
+                                    <html lang="es">
+                                    <head>
+                                        <meta charset="UTF-8">
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Redes Sociales Longhorn Grill</title>
+                                        <!-- Agregar la fuente de FontAwesome para los íconos -->
+                                        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                                        <style>
+                                            /* Estilo para las redes sociales */
+                                            .social {
+                                                display: flex; /* Alinea los íconos en una fila */
+                                                justify-content: center; /* Centra los íconos en la página */
+                                                gap: 15px; /* Espaciado entre los íconos */
+                                                padding: 10px; /* Espacio alrededor de los íconos */
+                                            }
+                                    
+                                            .social a {
+                                                font-size: 30px; /* Tamaño de los íconos */
+                                                color: #333; /* Color predeterminado de los íconos */
+                                                transition: color 0.3s ease; /* Efecto suave al pasar el ratón */
+                                            }
+                                    
+                                            .social a:hover {
+                                                color: #007bff; /* Cambia el color al pasar el ratón */
+                                            }
+                                    
+                                            .social i {
+                                                display: inline-block;
+                                            }
+                                        </style>
+                                    </head>
+                                    <body>
+                                    
+                                        <div class="social">
+                                            <!-- Enlace WhatsApp -->
+                                            <a href="https://api.whatsapp.com/send?phone=51945186438&text=Enlace%3A%0Ahttps%3A%2F%2Ffb.me%2F3YgBrRM72%0A%0A¡Hola%21+Podrías+darme+más+información+de...&source_url=https%3A%2F%2Ffb.me%2F3YgBrRM72&icebreaker=¡Hola%21+Podrías+darme+más+información+de...&app=facebook&entry_point=post_cta&jid=51945186438%40s.whatsapp.net&show_keyboard=1&show_ad_attribution=1&source=FB_Post&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3MzA5NDQ0NDUsInBob25lIjoiNTE5NDUxODY0MzgiLCJ0ZXh0IjoiRW5sYWNlOlxuaHR0cHM6XC9cL2ZiLm1lXC8zWWdCclJNNzJcblxuXHUwMGExSG9sYSEgUG9kclx1MDBlZGFzIGRhcm1lIG1cdTAwZTFzIGluZm9ybWFjaVx1MDBmM24gZGUuLi4iLCJzb3VyY2VfdXJsIjoiaHR0cHM6XC9cL2ZiLm1lXC8zWWdCclJNNzIiLCJpY2VicmVha2VyIjoiXHUwMGExSG9sYSEgUG9kclx1MDBlZGFzIGRhcm1lIG1cdTAwZTFzIGluZm9ybWFjaVx1MDBmM24gZGUuLi4iLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicG9zdF9jdGEiLCJqaWQiOiI1MTk0NTE4NjQzOFx1MDA0MHMud2hhdHNhcHAubmV0Iiwic2hvd19rZXlib2FyZCI6MSwic2hvd19hZF9hdHRyaWJ1dGlvbiI6MSwic291cmNlIjoiRkJfUG9zdCIsInNvdXJjZV9pZCI6Ijk4NTg2OTcxNjkxODQzMiIsImNvbnRleHQiOiJBUkREYlhEX2NxMnRyMkF0ZnE1cDRHNURiT2ZKbE1YZ0ptTkNpZVZOYndGa0N4MDdldm1OZ1RzRjBGeEVRak1qTkM0cTYxeVFlUlEtbnN3dnVVWTcxSDRFQzJBOEY1bEVxMXNYNU9OWElNeWozbml0U09TeVJVQUd5WTRJaTd4OFg5aWxmMHBENWVPbkRpaE5PYktVVlNzSGlKV2pBWURqRnpRLU1USmtZQ01jY2NhMXdKSXZILWgxQklSS0JWOUlCcEdhM2pfYmJwMDlVQXRhVUJXOVPmZFVlcWQzbWx2VXgxR3VpZmFVNnRqSDlCMXlXUmtZZXRnOUlFWmRtZFVmZlNYUlQ3NDM5YXZXVTItLUZ6REdkbG9HQmZrbEJobGJHTkNxakdkaUJ0LWJfajJGaHZPSFdYMTgtbXpmaTVJZm9JLXRqcWpDS21qLXNNUSJ9.-tKvHhphIxALvFSvn6R2v4vwPEfoChXK74sV1d2B3KioTR8cfUG17wzpWd-tWJT68GwFuPIO4ulrDXT-TadbxA" target="_blank">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                    
+                                            <!-- Enlace Facebook -->
+                                            <a href="https://www.facebook.com/LongHorn.Peru" target="_blank">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                    
+                                            <!-- Enlace Instagram -->
+                                            <a href="https://www.instagram.com/longhornperuoficial/?hl=es" target="_blank">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                    
+                                            <!-- Enlace Linkr -->
+                                            <a href="https://linkr.bio/longhornperuoficial" target="_blank">
+                                                <i class="fab fa-linkedin-in"></i> <!-- Cambia este ícono si lo prefieres -->
+                                            </a>
+                                        </div>
+                                    
+                                    </body>
+                                    </html>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+            <!-- Nav Bar Start -->
+            <div class="nav-bar">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                        <a href="#" class="navbar-brand">MENU</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="navbar-nav mr-auto">
+                                <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                                <a href="about.html" class="nav-item nav-link">Sobre Nosotros</a>
+                                <a href="service.html" class="nav-item nav-link">Nuestra carta</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Apartado</a>
+                                    <div class="dropdown-menu">
+                                        <a href="single.html" class="dropdown-item">Nuevos eventos</a>
+                                    </div>
+                                </div>
+                                <a href="contact.html" class="nav-item nav-link">Contactanos</a>
+                            </div>
+                            <div class="ml-auto">
+                                <a class="btn" href="https://longhornperu.com">Saber mas</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- Nav Bar End -->
+            
+            
+            <!-- Carousel Start -->
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://i.pinimg.com/originals/c6/0a/19/c60a19d6d9209376def3658162ecd610.gif" alt="Carousel Image">
+                        <div class="carousel-caption">
+                            <h1 class="animated fadeInLeft">EL REGALO</h1>
+                            <p class="animated fadeInRight">Que hace feliz a todos...</p>
+                            <a class="btn animated fadeInUp" href="#">Conócenos</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://scontent.fjau3-1.fna.fbcdn.net/v/t39.30808-6/271608076_6762003057205387_7535871723751109075_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=0udy0u-89QMQ7kNvgHe3rTD&_nc_zt=23&_nc_ht=scontent.fjau3-1.fna&_nc_gid=AYyCf--pysjIF8RmTu2CK3W&oh=00_AYAJX07b127VGw7Uj8R_Z7iG3zm8lO6P_GcKyXX7P2_nEw&oe=672B8C06" alt="Carousel Image">
+                        <div class="carousel-caption">
+                            <h1 class="animated fadeInLeft">Delivery</h1>
+                            <p class="animated fadeInRight">Tu lo pides y nosotros lo llevamos..</p>
+                            <a class="btn animated fadeInUp" href="#">Pide ahora</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://scontent.fjau3-1.fna.fbcdn.net/v/t39.30808-6/450120275_897683999070338_1958862232989459088_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=XNJ0zSa-vFIQ7kNvgGYDKr-&_nc_zt=23&_nc_ht=scontent.fjau3-1.fna&_nc_gid=AD-L8Xx4iBSaXIZUepwB4kU&oh=00_AYBntk4zAR44C38Qo1GpU_WIEgs00FXFe-3G4t3Ss6viSg&oe=672B7808" alt="Carousel Image">
+                        <div class="carousel-caption">
+                            <h1 class="animated fadeInLeft">Evento Especial </h1>
+                            <p class="animated fadeInRight">Celebramos la amistad</p>
+                            <a class="btn animated fadeInUp" href="#">Pide ahora!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- Carousel End -->
+            
+            
+            <!-- Top Feature Start-->
+            <div class="feature-top">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="feature-item">
+                                <i class="far fa-check-circle"></i>
+                                <h3>100%</h3>
+                                <p>Calificado</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="feature-item">
+                                <i class="fa fa-user-tie"></i>
+                                <h3>Cocineros</h3>
+                                <p>Expertos y calificados</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="feature-item">
+                                <i class="far fa-thumbs-up"></i>
+                                <h3>Seguidores</h3>
+                                <p>mas de 100 mil usuarios</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="feature-item">
+                                <i class="far fa-handshake"></i>
+                                <h3>Soporte</h3>
+                                <p>Superviciones al cualquier hora</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top Feature End-->
+            
+            
+ <!-- About Start -->
+<div class="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+                <div class="about-img">
+                    <img src="https://scontent.fjau3-1.fna.fbcdn.net/v/t39.30808-6/292062344_7663010377104646_8256583449697038728_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=7N_oc8_GZ24Q7kNvgE-2zJq&_nc_zt=23&_nc_ht=scontent.fjau3-1.fna&_nc_gid=Ai4F_fmk_JemMQkqnjUYPWK&oh=00_AYCJ2xMNic2D9hwm3IBGAAEDi27E2jJ8Udm-LtDUU9DyNA&oe=672BA619" alt="Image">
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <h2>Nuestra historia</h2>
+                <div class="about-text">
+                    <p>
+                        LongHorn Grill & Drinks es una empresa con trece años de trayectoria, fundada por dos amigos sin experiencia previa en el sector gastronómico, pero con el deseo de satisfacer a un público amante de las carnes y la buena comida.
+                    </p>
+                    <p>
+                        Desde sus inicios, apostaron por una estrategia de contratación de profesionales especializados, como un chef general, un jefe de barra y un supervisor de servicios, quien ahora es el Gerente de Operaciones y lidera la expansión de la cadena.
+                    </p>
+                    <a class="btn custom-btn" href="javascript:void(0)" id="openModal">Mas información</a> <!-- Botón actualizado -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Mas Información -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="text-align: center;">Nuestra historia</h2>
+        <div class="modal-text" style="max-height: 400px; overflow-y: auto; text-align: center;">
+            <p>
+                Con más de cinco locales en Lima, LongHorn se ha consolidado por su oferta de parrillas y pastas, así como por su enfoque en la experiencia del cliente. La empresa comenzó en el Centro Comercial Jockey Plaza, dirigiéndose al segmento A, pero al identificar un flujo de clientes limitado, adaptaron su estrategia al introducir promociones que incluyeran guarniciones y bebidas, lo cual incrementó la afluencia de público y amplió su alcance al segmento A y B.
+            </p>
+            <p>
+                El éxito de estas promociones, junto con la calidad de sus productos, fue clave para posicionarse en el mercado. A los cinco años, adquirieron su primer local propio en la Av. Libertadores, San Isidro, atrayendo a profesionales y ejecutivos, y consolidándose como un referente en carnes y parrillas de alta calidad con un servicio competitivo.
+            </p>
+            <img src="https://scontent.fjau3-1.fna.fbcdn.net/v/t39.30808-6/461963795_27043970088582052_707808657936575359_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=RlZynCUmNOwQ7kNvgHo6hPQ&_nc_zt=23&_nc_ht=scontent.fjau3-1.fna&_nc_gid=Aza01cF852tGZH-rgh74i3X&oh=00_AYAjgS6jWn2eZIEMqCkQXuIKI97Av0RRafVE6L4d0GK1yQ&oe=672B7C14" alt="Imagen de LongHorn Grill & Drinks" style="width: 100%; height: auto; margin-top: 20px;">
+        </div>
+    </div>
+</div>
+
+<!-- CSS para el estilo del modal y el fondo difuso -->
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo difuso */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: white;
+        width: 80%;
+        max-width: 800px;
+        height: 400px;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-y: auto;
+        text-align: center;
+        position: relative;
+    }
+
+    .modal-text {
+        text-align: justify;
+    }
+
+    /* Botón de cierre */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Estilo para el botón personalizado */
+    .custom-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #333;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-btn:hover {
+        background-color: #555;
+    }
+</style>
+
+<!-- JavaScript para abrir y cerrar el modal -->
+<script>
+    const openModalButton = document.getElementById("openModal");
+    const modal = document.getElementById("modal");
+
+    // Abrir modal
+    openModalButton.addEventListener("click", function() {
+        modal.style.display = "flex";
+    });
+
+    // Cerrar modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Cerrar modal si se hace clic fuera de él
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About End -->
+
+
+<!-- Sección de 'Áreas de Práctica' -->
+<div class="service">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nuestras Áreas de Práctica</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa fa-bullseye"></i>
+                    </div>
+                    <h3 style="margin-top: 10px;">Objetivo</h3>
+                    <p style="text-align: center;">Breve descripción </p>
+                    <a class="btn custom-btn" href="javascript:void(0)" onclick="openModal('modal-objective')">Más Información</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa fa-history"></i> <!-- Ícono cambiado -->
+                    </div>
+                    <h3 style="margin-top: 10px;">Breve Reseña Histórica</h3>
+                    <p style="text-align: center;">Breve descripción .</p>
+                    <a class="btn custom-btn" href="javascript:void(0)" onclick="openModal('modal-history')">Más Información</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                    <h3 style="margin-top: 10px;">VISIÓN</h3>
+                    <p style="text-align: center;">Breve descripción </p>
+                    <a class="btn custom-btn" href="javascript:void(0)" onclick="openModal('modal-vision')">Más Información</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa fa-flag-checkered"></i> <!-- Ícono cambiado -->
+                    </div>
+                    <h3 style="margin-top: 10px;">MISIÓN</h3>
+                    <p style="text-align: center;">Breve descripción </p>
+                    <a class="btn custom-btn" href="javascript:void(0)" onclick="openModal('modal-mission')">Más Información</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa fa-users"></i> <!-- Ícono cambiado -->
+                    </div>
+                    <h3 style="margin-top: 10px;">Tipo y Nivel</h3>
+                    <p style="text-align: center;">Breve descripción </p>
+                    <a class="btn custom-btn" href="javascript:void(0)" onclick="openModal('modal-hierarchy')">Más Información</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa fa-sitemap"></i>
+                    </div>
+                    <h3 style="margin-top: 10px;">Organigrama </h3>
+                    <p style="text-align: center;">Imagen</p>
+                    <a class="btn custom-btn" href="javascript:void(0)" onclick="openModal('modal-organigram')">Más Información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modales para cada área -->
+<div id="modal-objective" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: black; text-align: center;">Objetivo</h2>
+        <div class="modal-text">
+            <p>El objetivo principal de LongHorn es ofrecer una experiencia gastronómica de alta calidad con carnes y pastas premium, acompañada de un servicio excepcional para asegurar la satisfacción del cliente. La estrategia de crecimiento incluye la expansión de locales en Lima, la mejora de infraestructura, y la optimización operativa mediante tecnología y mejores prácticas de gestión. Además, la empresa busca diferenciarse con innovación en productos y promociones, fortalecer su marca a través de estrategias de marketing, promover el crecimiento profesional del equipo y diversificar el menú para atraer nuevos segmentos de mercado sin comprometer la calidad.</p>
+            <img src="https://i.ibb.co/yf04qp3/image.png" alt="Imagen de Objetivo" class="modal-image">
+        </div>
+    </div>
+</div>
+
+<div id="modal-history" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: black; text-align: center;">Breve Reseña Histórica</h2>
+        <div class="modal-text">
+            <p>LongHorn Grill es una cadena peruana de restaurantes especializada en carnes y parrillas. Fundada el 15 de diciembre de 2000 en el centro comercial Jockey Plaza de Lima por tres socios, la empresa ha expandido su presencia a 11 sucursales en varias ciudades del Perú, incluyendo Huancayo, Piura y Cajamarca. Con más de 200 empleados, LongHorn Grill se destaca por ofrecer una experiencia culinaria de alta calidad en un ambiente cómodo y con estilo distintivo. Alfredo Zanatti, su director general, ha sido clave en el crecimiento y éxito de la marca, manteniendo su compromiso con la excelencia en la atención al cliente y en sus platos.</p>
+            <img src="https://scontent.fjau3-1.fna.fbcdn.net/v/t39.30808-6/461953993_27043970091915385_3745795487140467804_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=YCmSF_firUQQ7kNvgE0kQ2i&_nc_zt=23&_nc_ht=scontent.fjau3-1.fna&_nc_gid=AmZC3VXFQolIHtN4OlLegIC&oh=00_AYCfhb3Mb_ZD7M0elu-pb61YuCJJTmPy7jG7EIWGx4aHwA&oe=672C7299" alt="Imagen de Reseña Histórica" class="modal-image">
+        </div>
+    </div>
+</div>
+
+<div id="modal-vision" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: black; text-align: center;">VISIÓN</h2>
+        <div class="modal-text">
+            <p>En LongHorn Steakhouse, nuestra misión es brindar a nuestros clientes una experiencia gastronómica inigualable, donde la calidad de nuestros alimentos y la excelencia en el servicio son nuestra prioridad. Nos esforzamos por ofrecer los mejores cortes de carne, cuidadosamente seleccionados y preparados con maestría en nuestras parrillas, garantizando así un sabor incomparable en cada bocado. Nos comprometemos a crear un ambiente cálido y acogedor donde nuestros clientes se sientan como en casa, y donde cada visita sea una ocasión para celebrar y disfrutar. Con pasión y dedicación, trabajamos día a día para superar las expectativas de nuestros comensales y convertir cada comida en una experiencia memorable en LongHorn Steakhouse.</p>
+            <img src="https://i.ibb.co/qRS0JJG/image.png" alt="Imagen de Visión" class="modal-image">
+        </div>
+    </div>
+</div>
+
+<div id="modal-mission" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: black; text-align: center;">MISIÓN</h2>
+        <div class="modal-text">
+            <p>Nos visualizamos como la principal elección para los amantes de la carne en busca de una experiencia culinaria excepcional. Nos esforzamos por ser reconocidos como el estándar de oro en parrillas, destacando por la calidad insuperable de nuestros cortes de carne, la maestría en la preparación en parrilla y el servicio excepcional que ofrecemos en cada una de nuestras ubicaciones. Aspiramos a ser un destino de confianza para aquellos que valoran la excelencia gastronómica, creando recuerdos inolvidables para nuestros clientes y siendo un lugar donde cada comida se convierte en una celebración de los placeres simples de la vida.</p>
+            <img src="https://peruretail.sfo3.cdn.digitaloceanspaces.com/wp-content/uploads/longhorn-map-sta-anita-2.jpg" alt="Imagen de Misión" class="modal-image">
+        </div>
+    </div>
+</div>
+
+<div id="modal-hierarchy" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: black; text-align: center;">Tipo y Nivel</h2>
+        <div class="modal-text">
+            <p>LongHorn es una empresa que opera bajo el modelo de franquicia, permitiendo a inversionistas interesados adquirir derechos para operar un restaurante bajo la marca LongHorn. Este modelo permite una expansión más rápida y eficiente en diferentes ubicaciones. Cada franquicia sigue un esquema organizativo que incluye gerentes de sucursal, personal de cocina, atención al cliente, y soporte corporativo. En este sentido, la estructura jerárquica está diseñada para mantener la calidad en los estándares de servicio y la consistencia en la experiencia del cliente.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb1BSbxaH9NYv0yENmGZwVkUnVn4MWDt72-A&s" alt="Imagen de Tipo y Nivel" class="modal-image">
+        </div>
+    </div>
+</div>
+
+<div id="modal-organigram" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: black; text-align: center;">Organigrama</h2>
+        <div class="modal-text">
+            <p>Aquí se presenta el organigrama de LongHorn, que muestra la estructura organizativa de la empresa, desde la alta dirección hasta el personal operativo, destacando los diferentes niveles jerárquicos y funciones dentro de la organización.</p>
+            <img src="https://i.ibb.co/9TSqTMr/image.png" alt="Imagen de Organigrama" class="modal-image">
+        </div>
+    </div>
+</div>
+
+<!-- CSS para el estilo del modal y botón -->
+<style>
+    .modal {
+        display: none; /* Asegura que los modales no se abran automáticamente */
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+        min-height: 400px; /* Establecer una altura mínima para uniformidad */
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .custom-btn {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .custom-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .service-item {
+        text-align: center; /* Centrar texto e íconos */
+        padding: 20px; /* Asegura el mismo tamaño */
+        margin: 10px; /* Espaciado entre cuadros */
+        background-color: #f9f9f9; /* Color de fondo uniforme */
+        border-radius: 10px; /* Bordes redondeados */
+        height: 350px; /* Altura fija para todos los cuadros */
+        display: flex; /* Cambia a flex para centrar contenido */
+        flex-direction: column; /* Alinea contenido verticalmente */
+        justify-content: center; /* Centra el contenido verticalmente */
+    }
+
+    .service-icon {
+        font-size: 50px; /* Tamaño del ícono */
+        margin-bottom: 10px; /* Espaciado inferior para separación */
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Espacio entre el texto y la imagen */
+    }
+</style>
+
+<!-- JavaScript para abrir y cerrar los modales -->
+<script>
+    // Asegura que los modales estén ocultos inicialmente
+    window.onload = function() {
+        var modals = document.getElementsByClassName("modal");
+        for (var i = 0; i < modals.length; i++) {
+            modals[i].style.display = "none"; // Asegura que los modales no se abran al inicio
+        }
+    };
+
+    function openModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "flex"; // Cambiado a "flex" para centrar
+    }
+
+    function closeModal() {
+        var modals = document.getElementsByClassName("modal");
+        for (var i = 0; i < modals.length; i++) {
+            modals[i].style.display = "none";
+        }
+    }
+
+    // Para cerrar el modal al hacer clic fuera de él
+    window.onclick = function(event) {
+        var modals = document.getElementsByClassName("modal");
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Service End -->
+            
+            
+            <!-- Feature Start -->
+            <div class="feature">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="section-header">
+                                <h2>Apartado mas Informacion</h2>
+                            </div>
+                            <div class="row align-items-center feature-item">
+                                <div class="col-5">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-gavel"></i>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <h3>Servicios</h3>
+                                    <p>
+                                        En Longhorn Grill y Drinks, nuestro servicio se basa en la atención personalizada y en la dedicación a cada cliente.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row align-items-center feature-item">
+                                <div class="col-5">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-balance-scale"></i>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <h3>Trabajadores: </h3>
+                                    <p>
+                                        Nuestro equipo de trabajadores es la esencia de Longhorn Grill y Drinks. Cada miembro está altamente capacitado y comprometido con la excelencia,
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row align-items-center feature-item">
+                                <div class="col-5">
+                                    <div class="feature-icon">
+                                        <i class="far fa-smile"></i>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <h3>Atención al Cliente: </h3>
+                                    <p>
+                                        La atención al cliente es nuestra prioridad. Desde el momento en que nuestros clientes llegan hasta que se despiden, nos esforzamos por entender y satisfacer sus necesidades,
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="feature-video">
+                                <iframe 
+                                    width="100%" 
+                                    height="400" 
+                                    src="https://www.youtube.com/embed/0wgI9NdKlzo" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature End -->
+            
+            
+            <!-- Team Start -->
+            <div class="team">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Creadores de la pagina</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="https://i.pinimg.com/236x/2e/73/ce/2e73ce78d4ec1baa8a24a5e5d343582d.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Jeremias Avellaneda Angel Addair</h2>
+                                    <p>Diseñador</p>
+                                    <div class="team-social">
+                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="https://pp.userapi.com/c840329/v840329102/2cb11/91L0pyW1fmI.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Mijhael Zapana Benito</h2>
+                                    <p>Programador</p>
+                                    <div class="team-social">
+                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-item">
+                                <div class="team-img">
+                                    <img src="https://i.pinimg.com/originals/0a/3c/4a/0a3c4ad8f7c7d750c86d2a7d5dff6f1e.jpg" alt="Team Image">
+                                </div>
+                                <div class="team-text">
+                                    <h2>Garcia Victoria Maria Goretti</h2>
+                                    <p>Supervisora</p>
+                                    <div class="team-social">
+                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Team End -->
+
+
+            <!-- FAQs Start -->
+            <div class="faqs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="faqs-img">
+                                <img src="https://scontent.fjau3-1.fna.fbcdn.net/v/t39.30808-6/461680341_958255003013237_3414952563954678660_n.jpg?stp=dst-jpg_p526x296&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Y1ET6Pb1j2wQ7kNvgFcJeyq&_nc_zt=23&_nc_ht=scontent.fjau3-1.fna&_nc_gid=Aai-HmdQbI_IyLjx5GQlran&oh=00_AYBV3R910Rfi4UCONAZKRMxlxZJwbgB3UPapgZqjefOkQA&oe=672C9355" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="section-header">
+                                <h2>Preguntas mas frecuentes?</h2>
+                            </div>
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                                            <span>1</span> ¿Cuál es la especialidad de Longhorn Grill and Drinks?
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Longhorn Grill and Drinks se especializa en carnes a la parrilla de alta calidad, acompañadas de una variedad de platos tradicionales y exclusivos cócteles.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                                            <span>2</span>¿Cómo puedo hacer una reserva?
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Puedes hacer una reserva llamando a nuestro número de contacto o a través de nuestras redes sociales. También contamos con un sistema de reservas en nuestra página web para mayor comodidad.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseThree">
+                                            <span>3</span> ¿Ofrecen opciones vegetarianas o para dietas especiales?
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Sí, en Longhorn Grill and Drinks ofrecemos opciones vegetarianas y algunos platos que se pueden adaptar a dietas especiales. ¡Consúltanos y te ayudaremos a elegir!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
+                                            <span>4</span> ¿Tienen promociones o descuentos especiales?
+                                        </a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Sí, ofrecemos promociones y descuentos en ciertos días de la semana. Te recomendamos seguirnos en redes sociales para estar al tanto de nuestras ofertas.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFive">
+                                            <span>5</span> ¿Puedo organizar un evento privado en el restaurante?
+                                        </a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Claro, contamos con espacios adaptados para eventos privados. Contáctanos para más detalles y disponibilidad, y te ayudaremos a planificar un evento memorable.
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <a class="btn" href="">No disponible uwu </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQs End -->
+
+
+            <!-- Testimonial Start -->
+            <div class="testimonial">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Reseñas de clientes </h2>
+                    </div>
+                    <div class="owl-carousel testimonials-carousel">
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-1.fna.fbcdn.net/v/t39.30808-1/278332781_362364332494103_2430357538166347179_n.jpg?stp=dst-jpg_s100x100&_nc_cat=111&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=rmErxmMOOHIQ7kNvgEDcIT-&_nc_zt=24&_nc_ht=scontent.flim2-1.fna&_nc_gid=Aco9h0kJLpq2FAEgP3pUeTr&oh=00_AYAGapWzyBHenU90EzfLdIAHcdKmZsI7kO7mMir0HJWikQ&oe=672CA9E8" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>Lagherta Ñusta Eimi</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Mi lugar favorito 🤩🤩🤩
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-1.fna.fbcdn.net/v/t1.6435-1/124405469_10222034890636812_6278322465023643822_n.jpg?stp=dst-jpg_s100x100&_nc_cat=105&ccb=1-7&_nc_sid=e4545e&_nc_ohc=UdnANn0mjLYQ7kNvgFlFwmr&_nc_zt=24&_nc_ht=scontent.flim2-1.fna&_nc_gid=AFDwGGwdsV-fe0V5fG_ge2Q&oh=00_AYBzDjgWWF3TJBWhwnO9m4FuF99dwKsyN8SPxmwk35AXtQ&oe=674E2B2E" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>Rodrigo Lima</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Calidad siempre
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-2.fna.fbcdn.net/v/t39.30808-1/453043007_122164818776123001_2050010475083134104_n.jpg?stp=dst-jpg_s100x100&_nc_cat=101&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=uNk3d8wNm0MQ7kNvgEYiS_1&_nc_zt=24&_nc_ht=scontent.flim2-2.fna&_nc_gid=AZ2Y6sS2kvC82rk6hX7pEAB&oh=00_AYBcgSuytQHhCZLf8hPA7TLSb5-2s8v1XasIqNfr97oPJg&oe=672C8F0A" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>Maria Victoria</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Qué delicia 😋
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-1.fna.fbcdn.net/v/t1.6435-1/76730667_10220309972729796_2658188231958331392_n.jpg?stp=dst-jpg_s100x100&_nc_cat=105&ccb=1-7&_nc_sid=e4545e&_nc_ohc=bwsoOwV8vB4Q7kNvgE2iAnx&_nc_zt=24&_nc_ht=scontent.flim2-1.fna&_nc_gid=AYbMdDwBGnK7OoDMHep1RKr&oh=00_AYDBeduQmMrvJ_sZk7OMRBXp4Se800jOA9Koq9rEKpSEbg&oe=674E54FF" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>María Esther Romo Lazo</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Siempre exquisito.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-1.fna.fbcdn.net/v/t39.30808-6/344557088_2153358045055315_363770850775053834_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xcQ7RlP89JYQ7kNvgGosuFS&_nc_zt=23&_nc_ht=scontent.flim2-1.fna&_nc_gid=AxejXJUsN3FzGUQCVzm0rwU&oh=00_AYBRum1guBuJVggCZqM7qJxN-i5xsw85JYa52LROItROgw&oe=672C9CE8" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>Rosa Aranaga Polanco</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Definitivamente los ravioles son lo más delicioso😋 !!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-2.fna.fbcdn.net/v/t39.30808-1/451703065_10211760985776021_5636054626554860168_n.jpg?stp=c5.0.476.476a_dst-jpg_s100x100&_nc_cat=103&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=GXOzt7eL7H8Q7kNvgH1dDdg&_nc_zt=24&_nc_ht=scontent.flim2-2.fna&_nc_gid=A8h47-0cIIoCw-pij5FcmJZ&oh=00_AYDeFcHg_VH1RkdbPbuR0bBAy4m0HBYMQagcc0AVvYsbJw&oe=672CB141" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>Erik Omar Aràoz Castelar</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Las papas se mezclan, añadiendolas crocantes inmediatamente después de apagar el fuego de la cocina en el wok o sarten dandoles un par de "saltados" para mezclar todo...emplatar inmediato y a la mesa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <i class="fa fa-quote-right"></i>
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="https://scontent.flim2-1.fna.fbcdn.net/v/t39.30808-1/363326203_301538182407313_2713091051761751522_n.jpg?stp=dst-jpg_s100x100&_nc_cat=104&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=Dhf01d9hmh8Q7kNvgGnP6aN&_nc_zt=24&_nc_ht=scontent.flim2-1.fna&_nc_gid=Ayu5K8AIIAbZLXoJOICYANa&oh=00_AYBx6VoWpjD3AEQLQPzzmSHmTJ0mALBQm6KEyQjyg-TXJQ&oe=672CA727" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h2>Lida Infante de Doise</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p>
+                                        Excelente atención delicioso el salmón en su punto .. y el Sr encargado del estacionamiento con un trato muy educado 🇵🇪👍
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial End -->
+
+<!-- Newsletter Start -->
+<div class="newsletter">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contáctanos :D</h2>
+        </div>
+        <div class="form">
+            <input class="form-control" placeholder="Envía tu Gmail" id="emailInput">
+            <button class="btn" id="submitButton">Proceder</button>
+        </div>
+    </div>
+</div>
+<!-- Newsletter End -->
+
+<!-- Acuerdo Modal -->
+<div id="agreementModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3>¡Gracias por Contactarnos 😊!</h3>
+        <p>Hemos recibido tu correo electrónico 
+            deseas poner mas informacion.</p>
+        <div class="modal-buttons">
+            <a href="contact.html" class="btn">Más Detallado</a>
+            <button class="btn" id="closeButton">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 400px; /* Ancho máximo del modal */
+        width: 90%; /* Ajusta el ancho para dispositivos más pequeños */
+    }
+
+    .modal-buttons {
+        margin-top: 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #c29c3d; /* Color del texto */
+        background-color: #000; /* Color de fondo negro */
+        border: 2px solid #c29c3d; /* Borde dorado */
+        border-radius: 5px; /* Bordes redondeados */
+        text-decoration: none; /* Sin subrayado */
+        transition: background-color 0.3s, color 0.3s; /* Transición para efectos */
+        margin: 0 10px;
+    }
+
+    .btn:hover {
+        background-color: #c29c3d; /* Color de fondo dorado al pasar el mouse */
+        color: #000; /* Color de texto negro al pasar el mouse */
+    }
+
+    /* Animaciones */
+    .modal-content {
+        transform: translateY(20px);
+        transition: transform 0.3s;
+    }
+
+    .modal-content.show {
+        transform: translateY(0);
+    }
+</style>
+
+<script>
+    const submitButton = document.getElementById('submitButton');
+    const emailInput = document.getElementById('emailInput');
+    const agreementModal = document.getElementById('agreementModal');
+    const closeButton = document.getElementById('closeButton');
+
+    submitButton.addEventListener('click', function () {
+        // Aquí podrías agregar validación del correo electrónico si deseas
+        agreementModal.style.display = 'flex';
+        setTimeout(() => {
+            agreementModal.querySelector('.modal-content').classList.add('show');
+        }, 10);
+    });
+
+    closeButton.addEventListener('click', function () {
+        agreementModal.style.display = 'none';
+    });
+
+    // Opcional: cerrar el modal al hacer clic fuera del contenido
+    window.addEventListener('click', function (event) {
+        if (event.target === agreementModal) {
+            agreementModal.style.display = 'none';
+        }
+    });
+</script>
+
+
+            <!-- Footer Start -->
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="footer-about">
+                                <h2>Sobre nosotros</h2>
+                                <p>
+                                    Longhorn Grill and Drinks es una cadena de restaurantes especializada en ofrecer una experiencia culinaria basada en carnes de alta calidad y platos tradicionales peruanos. Fundada en Lima, Perú, esta empresa se ha posicionado como un referente en el sector de parrillas, destacándose por su enfoque en la calidad de los ingredientes, la preparación experta y el ambiente acogedor.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-8">
+                            <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="footer-link">
+                                <h2>Areas de servocop</h2>
+                                <a href="">Matrimonios</a>
+                                <a href="">Dia de la madre</a>
+                                <a href="">Cumpleaños</a>
+                                <a href="">San Valentin</a>
+                                <a href="">Dia del padre</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="footer-link">
+                                <h2>Servicios</h2>
+                                <a href="">Informacion </a>
+                                <a href="">Nuestra carta</a>
+                                <a href="">Preferencias</a>
+                                <a href="">Apartado</a>
+                                <a href="">Contactanos</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="footer-contact">
+                                <h2>Contactos</h2>
+                                <p><i class="fa fa-map-marker-alt"></i>Longhorn - Huancayo. Av. Ferrocarril 1035 - C.C. Real Plaza</p>
+                                <p><i class="fa fa-phone-alt"></i>+51 945 186 438</p>
+                                <p><i class="fa fa-envelope"></i>reservas@longhorn.com.pe</p>
+                                <div class="footer-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="container footer-menu">
+                    <div class="f-menu">
+                        <a href="">Terminos de uso</a>
+                        <a href="">Politica de privacidad</a>
+                        <a href="">Cookies</a>
+                        <a href="">Ayuda</a>
+                        <a href="">Contactanos</a>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; <a href="https://htmlcodex.com/law-firm-website-template">LongHorn Grill and Drikis</a>, Privado.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Designado por<a href="https://htmlcodex.com"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+            
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
